@@ -1,0 +1,20 @@
+body {
+    
+}
+
+div#home{
+    /*background:blue;*/
+}
+
+div#header,div#footer{
+    border: 1px solid;
+    margin-top:5%;
+    margin-bottom:5%;
+}
+
+
+.item{
+    border: 1px solid;
+    margin-top:5%;
+    margin-bottom:5%;
+}
