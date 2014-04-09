@@ -1,5 +1,5 @@
 body {
-    
+    /*backgroud:white;*/
 }
 
 div#home{
@@ -8,13 +8,21 @@ div#home{
 
 div#header,div#footer{
     border: 1px solid;
-    margin-top:5%;
+    margin-top:15%;
     margin-bottom:5%;
+    margin-left:5%;
+    margin-right:5%;
 }
 
-
-.item{
+/*.item{
     border: 1px solid;
     margin-top:5%;
-    margin-bottom:5%;
+    margin-bottom:15%;
+    padding:2%;
+}*/
+
+
+.scrollview-container
+{
+    background:silver;
 }

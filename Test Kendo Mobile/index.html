@@ -21,23 +21,43 @@
         	
             
         	<div class="container">
-            	<div data-type="scrollView" data-page="3" id="scrollView1">
-                    <div class="row">
-                        <div data-role="page" class="span2 item">
-                            Option 1
-                            <a data-role="button" data-icon="favorites" href="" data-click="view" id="show">Show</a>
-                            <a data-role="button" data-icon="favorites" href="" data-click="hide"  data-init="hideButtons" id="hide">Hide</a>
-                        </div>
+                <div id="scrollview-container">
+                	<div data-type="scrollView" >
+                        <div class="row">
+                            <div class="item span2">
+                                <div data-role="page">
+                                    Option 1
+                                    <a data-role="button" data-icon="favorites" href="" data-click="view" class="show">Show</a>
+                                    <a data-role="button" data-icon="favorites" href="" data-click="hide"  data-init="hideButtons" class="hide">Hide</a>
+                                </div>
+                            </div>
+
+                            <div class="item span2">
+                                <div data-role="page">
+                                    	Option 2
+                                        <a data-role="button" data-icon="favorites" href="" data-click="view" class="show">Show</a>
+                                    <a data-role="button" data-icon="favorites" href="" data-click="hide"  data-init="hideButtons" class="hide">Hide</a>
+                                </div>
+                            </div>
+                            
+                            <div class="item span2">
+                                <div data-role="page">
+                                    Option 3
+                                        <a data-role="button" data-icon="favorites" href="" data-click="view" class="show">Show</a>
+                                    	<a data-role="button" data-icon="favorites" href="" data-click="hide"  data-init="hideButtons" class="hide">Hide</a>
+                                </div>
+                            </div>
+                            <div class="item span2">
+                                <div data-role="page">
+                                    Option 4
+                                        <a data-role="button" data-icon="favorites" href="" data-click="view" class="show">Show</a>
+                                    	<a data-role="button" data-icon="favorites" href="" data-click="hide"  data-init="hideButtons" class="hide">Hide</a>
+                                </div>
+                            </div>
                         
-                        <div data-role="page" class="span2 item">
-                            Option 2
                         </div>
-                        
-                        <div data-role="page" class="span2 item">
-                            Option 3
-                        </div>
-                    </div>
-           	 </div>
+               	 </div>
+                </div>
          	</div>
         
         <div data-role="footer">
@@ -49,29 +69,47 @@
     </div>
     
 
-    
+    <style scoped>
+        #home
+        .km-content
+        {
+			background:white;
+		}
+        
+        .km-header
+        {
+            background:blue;
+        }
+    </style>
     <script src="js/jquery.min.js"></script>
     <script src="js/kendo.all.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
     	var app = new kendo.mobile.Application(document.body);
-        $('#hide').hide();
-        $('#scrollView').width();
+        $('.hide').hide();
+        //$('.show').hide();
+        $('#scrollview-container').width();
+        $('#scrollview-container').height();
         function view()
         {
+            var itemSize = $('#home').width();
 			$('.item').removeClass('span2');
 			$('.item').addClass('span4');
-            $('#show').hide();
-            $('#hide').show();
+            $('.show').hide();
+            $('.hide').show();
             //$('#scrollView').width();
+            alert($('#home').width());
+            $('.item').width(itemSize-10);
+            $('.item').attr('margin-left','5px');
+            $('#scrollview-container').width(itemSize * 4);
         }
         
         function hide()
         {
 			$('.item').removeClass('span4');
 			$('.item').addClass('span2');
-            $('#show').show();
-            $('#hide').hide();
+            $('.show').show();
+            $('.hide').hide();
             //$('#scrollView').width();
             
         }
